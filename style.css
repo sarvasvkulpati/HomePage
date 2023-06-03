@@ -1,0 +1,105 @@
+html {
+  height: 100%;
+  width: 100%;
+
+  font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: none; /* Hide the overlay by default */
+  z-index: 9999; /* Ensure the modal appears on top of other elements */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+.modalContainer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  margin: 0 16px; /* Adds equal margin on both sides */
+  margin-bottom: 10px;
+  max-height: calc(100% - 20px);
+  max-width: 450px;
+  width: calc(100% - 32px); /* Adjusts the width to account for margins */
+  box-sizing: border-box; /* Includes padding and border in the width calculation */
+  overflow-y: auto;
+}
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.closeButton {
+  cursor: pointer;
+}
+
+
+
+
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.image-container p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+
+
+#title {
+  margin: 0px 32px;
+
+  width: 100%;
+  max-width: 600px;
+}
+
+#title button {
+  cursor: pointer;
+}
+
+
+
+.hide-on-small {
+  display: none;
+  color: red
+}
+
+@media screen and (max-width: 600px) {
+  /* Styles for mobile devices */
+  #title {
+    margin: 0px 16px
+  }
+
+  #title button {
+    width: 90%
+  }
+  .hide-on-small {
+    display: block;
+  }
+  .modalContainer {
+    margin: 0px
+  }
+}
